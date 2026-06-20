@@ -1,0 +1,24 @@
+# Visual Studio
+.vs
+.VC.db
+
+# Build
+Debug
+Release
+x64
+x86
+
+# QtCMake
+build
+CMakeFiles
+CMakeCache.txt
+
+# Intermediate files
+.obj
+.pdb
+.ilk
+.ipch
+.sdf
+
+# Executables
+.exe
