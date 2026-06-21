@@ -36,6 +36,11 @@ private slots:
 	void on_actionNewImage_triggered();
 	void on_actionOpen_image_triggered();
     void on_actionColorPicker_triggered();
+	void on_actionEraser_triggered();
+	void on_actionPen_triggered();
+	void on_actionRectangle_triggered();
+	void on_actionCIrcle_triggered();
+
 
 private:
     PaintCanvas* m_canvasWidget;

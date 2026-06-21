@@ -6,6 +6,14 @@
 #include <QMouseEvent>
 
 
+enum class DrawTool
+{
+	Pen,
+	Eraser,
+	Rectangle,
+	Ellipse,
+};
+
 class PaintCanvas :   public QWidget
 {
 	Q_OBJECT
@@ -23,6 +31,9 @@ public:
 
 	bool saveImage(const QString& fileName);
 	void loadImage(const QString& fileName);
+	void setEraserMode(bool enable);
+
+	void setTool(DrawTool tool);
 
 protected:
 	void paintEvent(QPaintEvent* event) override;
@@ -35,8 +46,12 @@ private:
 	QPixmap m_canvas;
 	QPoint m_lastPoint;
 	bool m_drawing = false;
-	
-	
+	bool m_eraserMode = false;
+
+	QPoint m_startPoint;
+	QPoint m_endPoint;
+
+	DrawTool m_currentTool = DrawTool::Pen;
 
 	int m_penWidth = 3;
 };

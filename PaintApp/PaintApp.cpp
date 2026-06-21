@@ -13,9 +13,11 @@ PaintApp::PaintApp(QWidget *parent)
    m_canvasWidget =   new PaintCanvas(this);
    setCentralWidget(m_canvasWidget);
 	
+   m_canvasWidget->setTool(DrawTool::Pen);
    createToolBar_Events();
    createSignleSlots();  
 
+   statusBar()->showMessage("QT PaintApp By : Sanam Sah ");
 	
 }
 
@@ -36,6 +38,44 @@ void PaintApp::on_actionColorPicker_triggered()
     }
 }
 
+void PaintApp::on_actionEraser_triggered()
+{
+    m_canvasWidget->setEraserMode(ui.actionEraser->isChecked());
+    m_canvasWidget->setTool(DrawTool::Eraser);
+    ui.actionRectangle->setChecked(false);
+    ui.actionPen->setChecked(false);
+    ui.actionCIrcle->setChecked(false);
+}
+
+void PaintApp::on_actionPen_triggered()
+{
+	m_canvasWidget->setTool( DrawTool::Pen);
+	ui.actionRectangle->setChecked(false);
+	ui.actionEraser->setChecked(false);
+    ui.actionCIrcle->setChecked(false);
+    m_canvasWidget->setEraserMode(ui.actionEraser->isChecked());
+}
+
+void PaintApp::on_actionRectangle_triggered()
+{
+    m_canvasWidget->setTool(DrawTool::Rectangle);
+	ui.actionPen->setChecked(false);
+    ui.actionEraser->setChecked(false);
+	ui.actionCIrcle->setChecked(false);
+    m_canvasWidget->setEraserMode(ui.actionEraser->isChecked());
+
+}
+
+void PaintApp::on_actionCIrcle_triggered()
+{
+    m_canvasWidget->setTool(DrawTool::Ellipse);
+    ui.actionPen->setChecked(false);
+    ui.actionEraser->setChecked(false);
+    ui.actionRectangle->setChecked(false);
+    m_canvasWidget->setEraserMode(ui.actionEraser->isChecked());
+
+}
+
 void PaintApp::createToolBar_Events()
 {
     m_penWidthSpinBox = new QSpinBox(this);
@@ -49,6 +89,12 @@ void PaintApp::createToolBar_Events()
 
 
     ui.mainToolBar->addWidget(m_penWidthSpinBox);
+
+    ui.actionEraser->setCheckable(true);
+	ui.actionPen->setCheckable(true);
+	ui.actionRectangle->setCheckable(true);
+    ui.actionPen->setChecked(true);
+    ui.actionCIrcle->setCheckable(true);
 }
 
 void PaintApp::createSignleSlots()

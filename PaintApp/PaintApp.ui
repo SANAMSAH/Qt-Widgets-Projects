@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>848</width>
+    <width>853</width>
     <height>648</height>
    </rect>
   </property>
@@ -19,7 +19,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>848</width>
+     <width>853</width>
      <height>33</height>
     </rect>
    </property>
@@ -43,7 +43,11 @@
    <addaction name="actionNewImage"/>
    <addaction name="actionOpen_image"/>
    <addaction name="actionSaveImage"/>
+   <addaction name="actionPen"/>
+   <addaction name="actionRectangle"/>
+   <addaction name="actionCIrcle"/>
    <addaction name="actionColorPicker"/>
+   <addaction name="actionEraser"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionColorPicker">
@@ -85,6 +89,56 @@
    </property>
    <property name="text">
     <string>Open image</string>
+   </property>
+  </action>
+  <action name="actionEraser">
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::DocumentProperties"/>
+   </property>
+   <property name="text">
+    <string>Eraser</string>
+   </property>
+   <property name="toolTip">
+    <string>Eraser</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionPen">
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::MailMessageNew"/>
+   </property>
+   <property name="text">
+    <string>Pen</string>
+   </property>
+   <property name="toolTip">
+    <string>Pen</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionRectangle">
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::MediaPlaybackStop"/>
+   </property>
+   <property name="text">
+    <string>Rectangle</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="actionCIrcle">
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::MediaRecord"/>
+   </property>
+   <property name="text">
+    <string>CIrcle</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
  </widget>
