@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Icon/Open.png</file>
+        <file>Icon/New.png</file>
+        <file>Icon/Zoom in.png</file>
+        <file>Icon/Zoom out.png</file>
+        <file>Icon/Fit.png</file>
+    </qresource>
+</RCC>
