@@ -1,12 +1,11 @@
 cmake_minimum_required(VERSION 3.16)
-project(ImageVIewer LANGUAGES CXX)
+project(PhotoManager LANGUAGES CXX)
 
 include(qt.cmake)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_PREFIX_PATH "C:/Qt/6.11.1/msvc2022_64")
-
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
 find_package(Qt${QT_VERSION_MAJOR}
     COMPONENTS
@@ -16,20 +15,15 @@ find_package(Qt${QT_VERSION_MAJOR}
 )
 qt_standard_project_setup()
 
-# qt_standard_project_setup() enables AUTOMOC and AUTOUIC, but NOT AUTORCC.
-# Without this, resources.qrc is never compiled by rcc, so the :/Icon/*.png
-# images are missing at runtime (Qt Designer still shows them because it reads
-# the PNG files directly from disk). This is why toolbar buttons showed text only.
 set(CMAKE_AUTORCC ON)
 
 set(PROJECT_SOURCES
     main.cpp
-    ImageVIewer.ui
-    ImageVIewer.h
-    ImageVIewer.cpp
+    PhotoManager.ui
+    PhotoManager.h
+    PhotoManager.cpp
     resources.qrc
 )
-
 
 qt_add_executable(${PROJECT_NAME} ${PROJECT_SOURCES})
 
