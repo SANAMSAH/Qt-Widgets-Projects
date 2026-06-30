@@ -22,6 +22,9 @@ set(PROJECT_SOURCES
     PhotoManager.ui
     PhotoManager.h
     PhotoManager.cpp
+    ImageInfoDialog.h
+    ImageInfoDialog.cpp
+    ImageInfoDialog.ui
     resources.qrc
 )
 
